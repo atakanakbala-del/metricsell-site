@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricSell | E-Ticaret, E-İhracat & Sağlık Turizmi Dijital Ajansı</title>
+    <meta name="description" content="MetricSell: Amazon, Etsy, Walmart'da global büyüme ve sağlık turizminde 4 dilde yabancı hasta edinme. 100+ marka, %120 satış artışı.">
+    <meta name="keywords" content="e-ticaret danışmanlığı, e-ihracat, amazon satış, sağlık turizmi reklam, yabancı hasta edinme, dijital pazarlama">
+    <meta name="author" content="MetricSell">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MetricSell | Global Dijital Büyüme Ortağı">
+    <meta property="og:description" content="E-ticaret ve sağlık turizminde veriye dayalı dijital çözümler. 100+ markaya hizmet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metricsell.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MetricSell | Dijital Büyüme Ortağı">
+    <meta name="twitter:description" content="E-ticaret ve sağlık turizminde uzman dijital çözümler.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://metricsell.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#030712',
+                            navy: '#0f172a',
+                            blue: '#1e3a5f',
+                            orange: '#f59e0b',
+                            orangeLight: '#fbbf24',
+                            health: '#0ea5e9',
+                            healthLight: '#38bdf8',
+                            surface: '#111827',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #030712; color: white; overflow-x: hidden; }
+
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-health {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .glass-nav {
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .hero-gradient {
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(30, 58, 95, 0.3), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(245, 158, 11, 0.05), transparent),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(14, 165, 233, 0.05), transparent),
+                #030712;
+        }
+
+        .glow-orange {
+            box-shadow: 0 0 60px -15px rgba(245, 158, 11, 0.3);
+        }
+
+        .glow-health {
+            box-shadow: 0 0 60px -15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .card-hover-health:hover {
+            transform: translateY(-4px);
+            border-color: rgba(14, 165, 233, 0.2);
+        }
+
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .noise {
+            position: relative;
+        }
+        .noise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 35s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon { transition: transform 0.3s ease; }
+
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .blog-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .blog-card:hover {
+            border-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        .tag {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .tag-health {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+        }
+
+        .img-overlay {
+            background: linear-gradient(to top, rgba(3,7,18,0.9) 0%, rgba(3,7,18,0.3) 50%, transparent 100%);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+
+        .pulse-dot {
+            animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-surface border-b border-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex justify-between items-center text-xs">
+            <div class="flex items-center gap-6 text-gray-500">
+                <a href="tel:+905369852926" class="hover:text-brand-orange transition-colors flex items-center gap-2">
+                    <i class="fas fa-phone text-[10px] text-brand-orange"></i>
+                    <span>0536 985 29 26</span>
+                </a>
+                <a href="mailto:info@metricsell.com" class="hover:text-brand-orange transition-colors hidden sm:flex items-center gap-2">
+                    <i class="fas fa-envelope text-[10px] text-brand-orange"></i>
+                    <span>info@metricsell.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-brand-orange/15 flex items-center justify-center transition-all hover:scale-110">
+                    <i class="fab fa-linkedin-in text-[10px] text-gray-400"></i>
+                </a>
+                <a href="#" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-brand-orange/15 flex items-center justify-center transition-all hover:scale-110">
+                    <i class="fab fa-instagram text-[10px] text-gray-400"></i>
+                </a>
+                <a href="#" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-brand-orange/15 flex items-center justify-center transition-all hover:scale-110">
+                    <i class="fab fa-x-twitter text-[10px] text-gray-400"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-[45px] z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="data:image/png;base64,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" alt="MetricSell Logo" class="h-10 w-auto object-contain">
+                </a>
+
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#hizmetler" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Hizmetler</a>
+                    <a href="#eticaret" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">E-Ticaret</a>
+                    <a href="#saglik" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Sağlık Turizmi</a>
+                    <a href="#surec" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Süreç</a>
+                    <a href="#blog" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Blog</a>
+                    <a href="#iletisim" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">İletişim</a>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+905369852926" class="text-sm text-gray-500 hover:text-white transition-colors">0536 985 29 26</a>
+                    <a href="#iletisim" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-brand-dark">Teklif Al</a>
+                </div>
+
+                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-brand-dark/98 backdrop-blur-2xl transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+            <a href="#hizmetler" class="text-3xl font-semibold text-white mobile-link font-display">Hizmetler</a>
+            <a href="#eticaret" class="text-3xl font-semibold text-white mobile-link font-display">E-Ticaret</a>
+            <a href="#saglik" class="text-3xl font-semibold text-white mobile-link font-display">Sağlık Turizmi</a>
+            <a href="#surec" class="text-3xl font-semibold text-white mobile-link font-display">Süreç</a>
+            <a href="#blog" class="text-3xl font-semibold text-white mobile-link font-display">Blog</a>
+            <a href="#iletisim" class="text-3xl font-semibold text-white mobile-link font-display">İletişim</a>
+            <a href="#iletisim" class="btn-primary px-10 py-4 rounded-full text-lg font-semibold text-brand-dark mt-6">Teklif Al</a>
+        </div>
+        <button id="closeMobileMenu" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+            <i class="fas fa-times text-white text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient grid-bg min-h-screen flex items-center pt-36 pb-20 relative noise">
+        <div class="absolute top-32 right-[10%] w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px] floating"></div>
+        <div class="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-brand-health/5 rounded-full blur-[100px] floating" style="animation-delay: -3s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass mb-8 reveal">
+                        <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+                        <span class="text-sm text-gray-300">2026'da 100+ Markaya Hizmet Veriyoruz</span>
+                    </div>
+
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 font-display reveal">
+                        Global Pazarlar<br>
+                        <span class="gradient-text">Akıllı Büyüme</span>
+                    </h1>
+
+                    <p class="text-lg text-gray-400 mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed reveal">
+                        Veriye dayalı stratejiler, pazaryeri uzmanlığı ve sürdürülebilir kârlılık odağıyla markanızı uluslararası pazarlara taşıyoruz.
+                    </p>
+                    <p class="text-base text-gray-500 mb-10 max-w-xl mx-auto lg:mx-0 reveal">
+                        <span class="text-brand-health font-medium">Sağlık turizmi klinikleri</span> için 4 dilde reklam yönetimi ve yabancı hasta edinme çözümleri.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-14 reveal">
+                        <a href="#iletisim" class="btn-primary px-8 py-4 rounded-full text-base font-semibold text-brand-dark inline-flex items-center justify-center gap-2">
+                            <span>Ücretsiz Teklif Al</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="tel:+905369852926" class="btn-secondary px-8 py-4 rounded-full text-base font-medium text-white inline-flex items-center justify-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            <span>0536 985 29 26</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 reveal">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-bold text-white font-display"><span class="counter" data-target="100">0</span>+</div>
+                            <div class="text-xs text-gray-500 mt-1.5 tracking-wide">Marka</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-bold text-brand-orange font-display">%<span class="counter" data-target="120">0</span></div>
+                            <div class="text-xs text-gray-500 mt-1.5 tracking-wide">Satış Artışı</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-bold text-white font-display">7/24</div>
+                            <div class="text-xs text-gray-500 mt-1.5 tracking-wide">Destek</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block reveal">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-brand-orange/20 to-brand-health/20 rounded-[2.5rem] blur-2xl opacity-30"></div>
+                        <div class="relative rounded-[2rem] overflow-hidden border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" 
+                                 alt="Dijital Pazarlama ve E-Ticaret" 
+                                 class="w-full aspect-[4/3] object-cover">
+                            <div class="absolute inset-0 img-overlay"></div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="flex -space-x-2">
+                                        <div class="w-8 h-8 rounded-full bg-brand-orange/20 border-2 border-brand-dark flex items-center justify-center text-[10px] text-brand-orange font-bold">A</div>
+                                        <div class="w-8 h-8 rounded-full bg-brand-health/20 border-2 border-brand-dark flex items-center justify-center text-[10px] text-brand-health font-bold">S</div>
+                                        <div class="w-8 h-8 rounded-full bg-purple-500/20 border-2 border-brand-dark flex items-center justify-center text-[10px] text-purple-400 font-bold">M</div>
+                                    </div>
+                                    <span class="text-xs text-gray-400">100+ mutlu marka</span>
+                                </div>
+                                <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full w-[85%] progress-bar rounded-full"></div>
+                                </div>
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-xs text-gray-400">Büyüme Hedefi</span>
+                                    <span class="text-xs text-brand-orange font-semibold">%85 Tamamlandı</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-6 -left-6 glass rounded-2xl p-4 glow-orange">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-orange/10 flex items-center justify-center">
+                                    <i class="fas fa-arrow-trend-up text-brand-orange"></i>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-bold font-display">%120</div>
+                                    <div class="text-[10px] text-gray-400">Ort. ROI</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -top-4 -right-4 glass rounded-2xl p-4 glow-health">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-health/10 flex items-center justify-center">
+                                    <i class="fas fa-globe text-brand-health"></i>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-bold font-display">15+</div>
+                                    <div class="text-[10px] text-gray-400">Ülke</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+            <span class="text-[10px] text-gray-500 uppercase tracking-widest">Keşfet</span>
+            <div class="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-1.5">
+                <div class="w-0.5 h-1.5 bg-white/50 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section class="py-14 border-y border-white/[0.03] bg-brand-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-8">Güçlü Ortaklıklar</p>
+            <div class="overflow-hidden">
+                <div class="marquee-track">
+                    <div class="flex items-center gap-16 px-8 text-gray-600 whitespace-nowrap">
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Amazon</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Etsy</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Walmart</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Trendyol</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Hepsiburada</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Google Ads</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Meta</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">TikTok</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Shopify</span>
+                    </div>
+                    <div class="flex items-center gap-16 px-8 text-gray-600 whitespace-nowrap">
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Amazon</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Etsy</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Walmart</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Trendyol</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-orange transition-colors cursor-default">Hepsiburada</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Google Ads</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Meta</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">TikTok</span>
+                        <span class="text-xl font-bold font-display hover:text-brand-health transition-colors cursor-default">Shopify</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Main Services -->
+    <section id="hizmetler" class="py-28 relative noise">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Uzmanlık Alanlarımız</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-6 font-display">İki Güçlü Çözüm,<br><span class="gradient-text">Bir Ortak</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">E-ticaret ve sağlık turizmi alanlarında derin uzmanlıkla, markanızı global ölçekte büyütüyoruz.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- E-Commerce -->
+                <div id="eticaret" class="group relative rounded-[2rem] overflow-hidden service-card card-hover reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="aspect-[16/9] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop&q=80" 
+                                 alt="E-Ticaret ve E-İhracat" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 img-overlay"></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center">
+                                    <i class="fas fa-cart-shopping text-xl text-brand-orange"></i>
+                                </div>
+                                <div class="tag px-3 py-1 rounded-full text-[10px] font-semibold text-brand-orange uppercase tracking-wider">E-Ticaret</div>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-4 font-display">E-Ticaret &<br>E-İhracat Danışmanlığı</h3>
+                            <p class="text-gray-400 mb-8 leading-relaxed">Amazon, Etsy, Walmart ve Trendyol'da global mağaza açılışı, A+ Content, PPC optimizasyonu ve uluslararası lojistik desteği.</p>
+
+                            <ul class="space-y-3.5 mb-8">
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-orange text-xs"></i>
+                                    <span>Amazon Global Store Açılışı & Yönetimi</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-orange text-xs"></i>
+                                    <span>Etsy, Walmart, Trendyol Entegrasyonu</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-orange text-xs"></i>
+                                    <span>A+ Content & Marka Hikayesi Tasarımı</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-orange text-xs"></i>
+                                    <span>PPC Reklam Optimizasyonu & SEO</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-orange text-xs"></i>
+                                    <span>Uluslararası Lojistik & Gümrük</span>
+                                </li>
+                            </ul>
+
+                            <a href="#iletisim" class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:gap-3 transition-all text-sm">
+                                <span>Detaylı Bilgi Al</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Tourism -->
+                <div id="saglik" class="group relative rounded-[2rem] overflow-hidden service-card card-hover-health reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-health/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="aspect-[16/9] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop&q=80" 
+                                 alt="Sağlık Turizmi ve Klinik Pazarlama" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 img-overlay"></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-brand-health/10 border border-brand-health/20 flex items-center justify-center">
+                                    <i class="fas fa-heart-pulse text-xl text-brand-health"></i>
+                                </div>
+                                <div class="tag-health px-3 py-1 rounded-full text-[10px] font-semibold text-brand-health uppercase tracking-wider">Sağlık Turizmi</div>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-4 font-display">Sağlık Turizmi<br>Reklam Yönetimi</h3>
+                            <p class="text-gray-400 mb-8 leading-relaxed">Kliniklerinize yabancı hasta edinmek için 4 dilde dijital reklam stratejileri ve dönüşüm odaklı çözümler.</p>
+
+                            <ul class="space-y-3.5 mb-8">
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-health text-xs"></i>
+                                    <span>4 Dil Reklam Yönetimi (TR, EN, AR, FR)</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-health text-xs"></i>
+                                    <span>Google Ads & Meta Business Uzmanlığı</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-health text-xs"></i>
+                                    <span>Klinik Web Sitesi & Landing Page</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-health text-xs"></i>
+                                    <span>Whatsapp Business API Entegrasyonu</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300">
+                                    <i class="fas fa-check-circle text-brand-health text-xs"></i>
+                                    <span>Hasta Yorum Yönetimi & İtibar</span>
+                                </li>
+                            </ul>
+
+                            <a href="#iletisim" class="inline-flex items-center gap-2 text-brand-health font-semibold hover:gap-3 transition-all text-sm">
+                                <span>Detaylı Bilgi Al</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tourism Highlight -->
+    <section class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-brand-dark to-brand-navy/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10 p-10 sm:p-14 rounded-[2.5rem] glass reveal">
+                <div class="flex items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-star text-2xl text-brand-orange"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 font-display">Sağlık turizmi klinikleri için 4 dilde reklam yönetimi</h3>
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                            <span class="flex items-center gap-1"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="w-4 rounded-sm"> Türkçe</span>
+                            <span class="flex items-center gap-1"><img src="https://flagcdn.com/w20/gb.png" alt="EN" class="w-4 rounded-sm"> İngilizce</span>
+                            <span class="flex items-center gap-1"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="w-4 rounded-sm"> Arapça</span>
+                            <span class="flex items-center gap-1"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="w-4 rounded-sm"> Fransızca</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#iletisim" class="btn-primary px-8 py-4 rounded-full text-base font-semibold text-brand-dark whitespace-nowrap flex items-center gap-2 flex-shrink-0">
+                    <span>Ücretsiz Strateji Görüşmesi</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="surec" class="py-28 relative noise">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Çalışma Yöntemimiz</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-6 font-display">Nasıl <span class="gradient-text">Çalışıyoruz?</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Sistematik ve veriye dayalı bir yaklaşımla, markanızı hedeflerine ulaştırıyoruz.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <div class="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-orange/30 via-brand-health/30 to-brand-orange/30"></div>
+
+                <div class="relative reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-orange/5 border border-brand-orange/20 flex items-center justify-center mb-6 relative z-10">
+                        <span class="text-xl font-bold text-brand-orange font-display">01</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-3 font-display">Keşif & Analiz</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Markanızı, rakiplerinizi ve hedef pazarınızı derinlemesine analiz ediyoruz.</p>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-orange/5 border border-brand-orange/20 flex items-center justify-center mb-6 relative z-10">
+                        <span class="text-xl font-bold text-brand-orange font-display">02</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-3 font-display">Strateji & Planlama</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Veriye dayalı özel strateji belirleyerek, en hızlı rotayı çiziyoruz.</p>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-health/5 border border-brand-health/20 flex items-center justify-center mb-6 relative z-10">
+                        <span class="text-xl font-bold text-brand-health font-display">03</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-3 font-display">Uygulama & Optimize</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Stratejiyi hayata geçiriyor, sürekli A/B testleri ile optimize ediyoruz.</p>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-health/5 border border-brand-health/20 flex items-center justify-center mb-6 relative z-10">
+                        <span class="text-xl font-bold text-brand-health font-display">04</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-3 font-display">Raporlama & Büyüme</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Şeffaf raporlarla sonuçları paylaşıyor, sürdürülebilir büyüme sağlıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="py-28 bg-brand-surface/30 relative">
+        <div class="absolute inset-0 grid-bg opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Hizmet Detayları</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-6 font-display">Her Aşamada <span class="gradient-text">Yanınızdayız</span></h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card p-8 rounded-2xl hover:border-brand-orange/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-orange/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-store text-brand-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">Pazaryeri Mağaza Yönetimi</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Amazon, Etsy, Walmart ve Trendyol mağazalarınızın komple yönetimi.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl hover:border-brand-orange/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-orange/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bullseye text-brand-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">Performans Pazarlama</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Google Ads, Meta Ads ve TikTok Ads ile maksimum ROI odaklı reklam.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl hover:border-brand-orange/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-orange/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-magnifying-glass-chart text-brand-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">SEO & Organik Büyüme</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Teknik SEO, içerik stratejisi ve backlink çalışmaları.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl hover:border-brand-health/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-health/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-language text-brand-health"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">Çok Dilli İçerik</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Türkçe, İngilizce, Arapça ve Fransızca içerikler.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl hover:border-brand-health/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-health/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-medical text-brand-health"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">Klinik Web & Landing</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Hasta dönüşümü optimize edilmiş klinik web siteleri.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl hover:border-brand-health/20 transition-all group reveal">
+                    <div class="w-12 h-12 rounded-xl bg-brand-health/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-comments text-brand-health"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 font-display">Hasta İletişim Yönetimi</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Whatsapp Business API ve çok dilli chatbot sistemleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-navy/50 to-brand-dark"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+                <div class="text-center reveal">
+                    <div class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-3 font-display">
+                        <span class="counter" data-target="100">0</span>+
+                    </div>
+                    <div class="text-sm text-gray-500 tracking-wide">Mutlu Marka</div>
+                </div>
+                <div class="text-center reveal">
+                    <div class="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-orange mb-3 font-display">
+                        %<span class="counter" data-target="120">0</span>
+                    </div>
+                    <div class="text-sm text-gray-500 tracking-wide">Ort. Satış Artışı</div>
+                </div>
+                <div class="text-center reveal">
+                    <div class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-3 font-display">
+                        <span class="counter" data-target="15">0</span>+
+                    </div>
+                    <div class="text-sm text-gray-500 tracking-wide">Ülke</div>
+                </div>
+                <div class="text-center reveal">
+                    <div class="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-health mb-3 font-display">
+                        <span class="counter" data-target="4">0</span>
+                    </div>
+                    <div class="text-sm text-gray-500 tracking-wide">Dil Desteği</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-28 bg-brand-surface/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Referanslar</span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-6 font-display">Markaların <span class="gradient-text">Başarı Hikayeleri</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="testimonial-card p-8 rounded-2xl reveal">
+                    <div class="flex items-center gap-1 mb-5">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-sm">"MetricSell ile Amazon satışlarımızı 3 ay içinde %200 artırdık. Profesyonel yaklaşım ve 7/24 destek gerçekten fark yaratıyor."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-orange/20 to-brand-orange/5 flex items-center justify-center text-brand-orange font-bold text-sm">AY</div>
+                        <div>
+                            <div class="font-semibold text-sm">Ahmet Y.</div>
+                            <div class="text-xs text-gray-600">E-İhracat Direktörü</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl reveal">
+                    <div class="flex items-center gap-1 mb-5">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-sm">"Kliniğimize Arapça ve İngilizce reklam kampanyaları ile Ortadoğu'dan hasta akışı sağladık. ROI'miz 4 kata çıktı."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-health/20 to-brand-health/5 flex items-center justify-center text-brand-health font-bold text-sm">SK</div>
+                        <div>
+                            <div class="font-semibold text-sm">Dr. Selin K.</div>
+                            <div class="text-xs text-gray-600">Estetik Cerrahi Kliniği</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl reveal">
+                    <div class="flex items-center gap-1 mb-5">
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                        <i class="fas fa-star text-brand-orange text-xs"></i>
+                    </div>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-sm">"Etsy mağazamızın A+ Content ve SEO çalışmaları sonrası organik trafiğimiz 5 kat arttı. Kesinlikle tavsiye ederim."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center text-purple-400 font-bold text-sm">MB</div>
+                        <div>
+                            <div class="font-semibold text-sm">Mehmet B.</div>
+                            <div class="text-xs text-gray-600">E-Ticaret Girişimcisi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-28 relative noise">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Sıkça Sorulan Sorular</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mt-5 mb-6 font-display">Sorularınızı <span class="gradient-text">Yanıtlıyoruz</span></h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item glass rounded-2xl p-6 cursor-pointer reveal" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold pr-4">Amazon'da satış yapmak için neye ihtiyacım var?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-gray-500 flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-gray-400 leading-relaxed">Amazon'da satış yapmak için öncelikle bir Amazon Seller Central hesabı açmanız gerekiyor. Ardından ürünlerinizin UPC/EAN kodları, profesyonel ürün görselleri ve optimize edilmiş listelemeler hazırlanmalı. MetricSell olarak bu sürecin tamamında size rehberlik ediyor, mağaza açılışından itibaren satış optimizasyonunu yönetiyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass rounded-2xl p-6 cursor-pointer reveal" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold pr-4">Sağlık turizmi reklamları hangi ülkelerde yayınlanıyor?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-gray-500 flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-gray-400 leading-relaxed">Öncelikli olarak Ortadoğu (Suudi Arabistan, BAE, Katar, Kuveyt), Avrupa (Almanya, İngiltere, Fransa, Hollanda) ve BDT ülkelerinde hedefli reklam kampanyaları yürütüyoruz. Her ülke için yerel dilde (Arapça, İngilizce, Fransızca, Türkçe) içerik üretiyor ve kültürel hassasiyetlere uygun mesajlar hazırlıyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass rounded-2xl p-6 cursor-pointer reveal" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold pr-4">Çalışma ücretlendirme modeliniz nedir?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-gray-500 flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-gray-400 leading-relaxed">Projeye göre esnek çalışma modelleri sunuyoruz: Aylık retainer (sabit ücret), performans bazlı komisyon (satış başına) veya hibrit modeller. İlk görüşmemizde iş modelinizi analiz ederek size en uygun ve kârlı teklifi hazırlıyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass rounded-2xl p-6 cursor-pointer reveal" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-semibold pr-4">Sonuçları ne zaman görmeye başlarım?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-gray-500 flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-gray-400 leading-relaxed">E-ticaret projelerinde genellikle 2-4 hafta içinde ilk satış artışları gözlemlenir. Sağlık turizmi reklam kampanyalarında ise 4-8 hafta içinde istikrarlı bir hasta akışı sağlanır. Süreç, sektör rekabeti, bütçe ve hedef pazara göre değişiklik gösterebilir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section id="blog" class="py-28 bg-brand-surface/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 gap-6 reveal">
+                <div>
+                    <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Blog</span>
+                    <h2 class="text-4xl sm:text-5xl font-bold mt-5 font-display">Bilgi <span class="gradient-text">Merkezi</span></h2>
+                </div>
+                <a href="#" class="text-sm text-gray-400 hover:text-brand-orange transition-colors flex items-center gap-2">
+                    <span>Tüm Yazılar</span>
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="blog-card rounded-2xl overflow-hidden group reveal">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553729459-afe8f2cda4eb?w=600&auto=format&fit=crop&q=80" 
+                             alt="Amazon Satış Rehberi" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="tag px-2.5 py-0.5 rounded text-[10px] font-semibold text-brand-orange uppercase">E-Ticaret</span>
+                            <span class="text-[10px] text-gray-600">5 dk okuma</span>
+                        </div>
+                        <h3 class="font-bold mb-2 group-hover:text-brand-orange transition-colors font-display">Amazon'da Satış Yapmak İçin 2026 Rehberi</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Amazon Seller Central'dan FBA'ye kadar adım adım başlangıç rehberi...</p>
+                    </div>
+                </article>
+
+                <article class="blog-card rounded-2xl overflow-hidden group reveal">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80" 
+                             alt="Sağlık Turizmi Reklam" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="tag-health px-2.5 py-0.5 rounded text-[10px] font-semibold text-brand-health uppercase">Sağlık Turizmi</span>
+                            <span class="text-[10px] text-gray-600">7 dk okuma</span>
+                        </div>
+                        <h3 class="font-bold mb-2 group-hover:text-brand-health transition-colors font-display">Arapça Reklam Vererek Suudi Hastalar Nasıl Kazanılır?</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Ortadoğu pazarında etkili reklam stratejileri ve kültürel ipuçları...</p>
+                    </div>
+                </article>
+
+                <article class="blog-card rounded-2xl overflow-hidden group reveal">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&auto=format&fit=crop&q=80" 
+                             alt="Etsy SEO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="tag px-2.5 py-0.5 rounded text-[10px] font-semibold text-brand-orange uppercase">E-Ticaret</span>
+                            <span class="text-[10px] text-gray-600">4 dk okuma</span>
+                        </div>
+                        <h3 class="font-bold mb-2 group-hover:text-brand-orange transition-colors font-display">Etsy SEO: Organik Trafik 5 Kat Arttırma Taktikleri</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Etsy arama algoritmasını manipüle etmeden doğal büyüme sağlama yöntemleri...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="hakkimizda" class="py-28 relative noise">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">Hakkımızda</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-8 font-display">Neden <span class="gradient-text">MetricSell?</span></h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">2018'den bu yana e-ticaret ve dijital pazarlama alanında faaliyet gösteren MetricSell, markaların global pazarlarda sürdürülebilir büyümesini sağlıyor.</p>
+                    <p class="text-gray-400 mb-10 leading-relaxed">2023'ten itibaren sağlık turizmi sektöründeki dijital dönüşüm ihtiyacını görerek, kliniklere özel yabancı hasta edinme çözümleri geliştirdik. Bugün hem e-ihracat hem de sağlık turizmi alanlarında Türkiye'nin önde gelen dijital ajanslarından biriyiz.</p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-orange/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-shield-halved text-brand-orange text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-sm">Güvenilir Ortaklık</div>
+                                <div class="text-xs text-gray-600">Şeffaf raporlama</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-health/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-chart-line text-brand-health text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-sm">Veriye Dayalı</div>
+                                <div class="text-xs text-gray-600">Kanıtlanmış sonuçlar</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-orange/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-users text-brand-orange text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-sm">Uzman Ekip</div>
+                                <div class="text-xs text-gray-600">Sektör deneyimi</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-lg bg-brand-health/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-headset text-brand-health text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-sm">7/24 Destek</div>
+                                <div class="text-xs text-gray-600">Kesintisiz iletişim</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="relative rounded-[2rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80" 
+                             alt="MetricSell Ekibi" 
+                             class="w-full aspect-[4/3] object-cover">
+                        <div class="absolute inset-0 img-overlay"></div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <div class="glass rounded-2xl p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div class="text-4xl font-bold font-display">6+</div>
+                                        <div class="text-xs text-gray-400 mt-1">Yıllık Deneyim</div>
+                                    </div>
+                                    <div class="h-10 w-px bg-white/10"></div>
+                                    <div>
+                                        <div class="text-4xl font-bold font-display text-brand-orange">100+</div>
+                                        <div class="text-xs text-gray-400 mt-1">Tamamlanan Proje</div>
+                                    </div>
+                                    <div class="h-10 w-px bg-white/10"></div>
+                                    <div>
+                                        <div class="text-4xl font-bold font-display text-brand-health">15+</div>
+                                        <div class="text-xs text-gray-400 mt-1">Hedef Ülke</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/20 via-brand-dark to-brand-navy/40"></div>
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-health/5 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 font-display">Büyümenizi Birlikte<br><span class="gradient-text">Planlayalım</span></h2>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">E-ticaret veya sağlık turizmi alanında hedeflerinize ulaşmak için ücretsiz strateji görüşmesi talep edin. Size özel bir yol haritası çıkaralım.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+905369852926" class="btn-primary px-10 py-4 rounded-full text-lg font-semibold text-brand-dark inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-phone"></i>
+                    <span>0536 985 29 26</span>
+                </a>
+                <a href="mailto:info@metricsell.com" class="btn-secondary px-10 py-4 rounded-full text-lg font-medium text-white inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@metricsell.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="iletisim" class="py-28 relative noise">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="reveal">
+                    <span class="text-brand-orange text-xs font-semibold uppercase tracking-[0.3em]">İletişim</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 mb-8 font-display">Bizimle <span class="gradient-text">İletişime Geçin</span></h2>
+                    <p class="text-gray-400 mb-12 text-lg">Projenizi ve hedeflerinizi bize anlatın. 24 saat içinde size dönüş yapalım.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-orange/5 border border-brand-orange/10 flex items-center justify-center">
+                                <i class="fas fa-phone text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 mb-1">Telefon</div>
+                                <a href="tel:+905369852926" class="font-semibold hover:text-brand-orange transition-colors">0536 985 29 26</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-orange/5 border border-brand-orange/10 flex items-center justify-center">
+                                <i class="fas fa-envelope text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 mb-1">E-posta</div>
+                                <a href="mailto:info@metricsell.com" class="font-semibold hover:text-brand-orange transition-colors">info@metricsell.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-health/5 border border-brand-health/10 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-brand-health text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 mb-1">Whatsapp</div>
+                                <a href="https://wa.me/905369852926" target="_blank" class="font-semibold hover:text-brand-health transition-colors">+90 536 985 29 26</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <form class="p-8 sm:p-10 rounded-[2rem] glass" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><div class=\'w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4\'><i class=\'fas fa-check text-green-400 text-2xl\'></i></div><h3 class=\'text-xl font-bold mb-2\'>Mesajınız Alındı!</h3><p class=\'text-gray-400\'>En kısa sürede size dönüş yapacağız.</p></div>';">
+                        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Adınız</label>
+                                <input type="text" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/30 transition-all text-sm" placeholder="Adınız" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Soyadınız</label>
+                                <input type="text" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/30 transition-all text-sm" placeholder="Soyadınız" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">E-posta</label>
+                            <input type="email" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/30 transition-all text-sm" placeholder="ornek@email.com" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Hizmet Alanı</label>
+                            <select class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/30 transition-all text-sm appearance-none cursor-pointer">
+                                <option value="" class="bg-brand-dark">Hizmet Seçin</option>
+                                <option value="eticaret" class="bg-brand-dark">E-Ticaret & E-İhracat</option>
+                                <option value="saglik" class="bg-brand-dark">Sağlık Turizmi Reklamcılığı</option>
+                                <option value="diger" class="bg-brand-dark">Diğer Hizmetler</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">Mesajınız</label>
+                            <textarea rows="4" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/30 transition-all text-sm resize-none" placeholder="Projenizi kısaca anlatın..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary py-4 rounded-xl text-base font-semibold text-brand-dark">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/[0.03] bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <img src="data:image/png;base64,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" alt="MetricSell Logo" class="h-10 w-auto object-contain">
+                    </a>
+                    <p class="text-sm text-gray-600 mb-8 leading-relaxed">E-ticaret, e-ihracat ve sağlık turizmi alanlarında veriye dayalı dijital büyüme çözümleri.</p>
+                    <div class="flex items-center gap-2">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-brand-orange/10 flex items-center justify-center transition-all">
+                            <i class="fab fa-linkedin-in text-xs text-gray-500"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-brand-orange/10 flex items-center justify-center transition-all">
+                            <i class="fab fa-instagram text-xs text-gray-500"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-brand-orange/10 flex items-center justify-center transition-all">
+                            <i class="fab fa-x-twitter text-xs text-gray-500"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-brand-orange/10 flex items-center justify-center transition-all">
+                            <i class="fab fa-facebook-f text-xs text-gray-500"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-sm uppercase tracking-wider text-gray-400">Hizmetler</h4>
+                    <ul class="space-y-3.5">
+                        <li><a href="#eticaret" class="text-sm text-gray-600 hover:text-brand-orange transition-colors">E-Ticaret Danışmanlığı</a></li>
+                        <li><a href="#eticaret" class="text-sm text-gray-600 hover:text-brand-orange transition-colors">E-İhracat Çözümleri</a></li>
+                        <li><a href="#saglik" class="text-sm text-gray-600 hover:text-brand-health transition-colors">Sağlık Turizmi Reklamı</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-white transition-colors">Performans Pazarlama</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-white transition-colors">SEO & Organik Büyüme</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-sm uppercase tracking-wider text-gray-400">Şirket</h4>
+                    <ul class="space-y-3.5">
+                        <li><a href="#hakkimizda" class="text-sm text-gray-600 hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-white transition-colors">Kariyer</a></li>
+                        <li><a href="#blog" class="text-sm text-gray-600 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-white transition-colors">Basın</a></li>
+                        <li><a href="#iletisim" class="text-sm text-gray-600 hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-6 text-sm uppercase tracking-wider text-gray-400">İletişim</h4>
+                    <ul class="space-y-3.5">
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <i class="fas fa-phone text-brand-orange mt-0.5 text-xs"></i>
+                            <a href="tel:+905369852926" class="hover:text-white transition-colors">0536 985 29 26</a>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <i class="fas fa-envelope text-brand-orange mt-0.5 text-xs"></i>
+                            <a href="mailto:info@metricsell.com" class="hover:text-white transition-colors">info@metricsell.com</a>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <i class="fab fa-whatsapp text-brand-health mt-0.5 text-xs"></i>
+                            <a href="https://wa.me/905369852926" target="_blank" class="hover:text-white transition-colors">Whatsapp Destek</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/[0.03] mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-700">© 2026 MetricSell. Tüm hakları saklıdır.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-xs text-gray-700 hover:text-gray-500 transition-colors">Gizlilik Politikası</a>
+                    <a href="#" class="text-xs text-gray-700 hover:text-gray-500 transition-colors">Kullanım Koşulları</a>
+                    <a href="#" class="text-xs text-gray-700 hover:text-gray-500 transition-colors">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/905369852926" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-xl shadow-green-500/20 hover:scale-110 transition-transform group">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+        <span class="absolute right-full mr-3 bg-white text-brand-dark text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Bize Yazın</span>
+    </a>
+
+    <script>
+        // Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.style.top = '0';
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.style.top = '45px';
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+        });
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+        closeMobileMenu.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+
+        // FAQ
+        function toggleFaq(item) {
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
+            item.classList.toggle('active');
+        }
+
+        // GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            gsap.to(el, {
+                opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                delay: (i % 3) * 0.1
+            });
+        });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            gsap.to(counter, {
+                innerHTML: target, duration: 2.5, ease: 'power2.out', snap: { innerHTML: 1 },
+                scrollTrigger: { trigger: counter, start: 'top 85%' }
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
